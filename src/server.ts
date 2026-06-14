@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors'
 import { connectToDB } from './config/db';
+import notFoundMiddleware from './middleware/notFound.middleware';
 
 
 const app = express();
@@ -23,6 +24,10 @@ app.use(cors({credentials:true ,  origin:'http://localhost:3000'}));
 // Connection To Database
 connectToDB();
 
+// Routes
+
+// Not found route
+app.use(notFoundMiddleware)
 const PORT = 3000;
 app.listen(PORT , ()=>{
     console.log(`Server Running On http://localhost:${PORT}`)
