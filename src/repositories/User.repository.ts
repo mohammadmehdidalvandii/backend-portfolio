@@ -6,7 +6,7 @@ export const userRepository = {
         return UserModel.create(data);
     },
     async findByEmail(email:string){
-        return UserModel.findOne({email}).select('+password');
+        return UserModel.findOne({email}).select('-password');
     },
     async findById(id:string){
         return UserModel.findById(id);
