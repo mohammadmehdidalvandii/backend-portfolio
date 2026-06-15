@@ -1,16 +1,16 @@
 import express from 'express';
 import dotenv from 'dotenv';
+dotenv.config();
 import cookieParser from 'cookie-parser'
 import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors'
 import { connectToDB } from './config/db';
 import notFoundMiddleware from './middleware/notFound.middleware';
-
+import UserRouter from './routes/User.router';
 
 const app = express();
 
-dotenv.config();
 
 // Middleware
 app.use(cookieParser());
@@ -25,10 +25,12 @@ app.use(cors({credentials:true ,  origin:'http://localhost:3000'}));
 connectToDB();
 
 // Routes
+app.use('/api/user' , UserRouter);
+
 
 // Not found route
 app.use(notFoundMiddleware)
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT , ()=>{
     console.log(`Server Running On http://localhost:${PORT}`)
 })
