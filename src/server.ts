@@ -8,9 +8,13 @@ import cors from 'cors'
 import { connectToDB } from './config/db';
 import notFoundMiddleware from './middleware/notFound.middleware';
 import UserRouter from './routes/User.router';
+import path from 'path';
 
 const app = express();
 
+const uploadsDir  = path.join(process.cwd(), 'uploads')
+
+app.use('/uploads' , express.static(uploadsDir))
 
 // Middleware
 app.use(cookieParser());
