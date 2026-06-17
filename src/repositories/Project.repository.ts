@@ -14,7 +14,7 @@ export const projectRepository = {
     async delete(id:string){
         return ProjectModel.findOneAndDelete({_id:id})
     },
-    async getAllProject(){
+    async getAllProjects(){
         return ProjectModel.find({}).sort({createdAt:-1}).lean()
     }
 }

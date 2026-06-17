@@ -3,7 +3,6 @@ import { ProjectDTO } from '../types/project';
 
 export const projectServices = {
     async createProject(data:ProjectDTO){
-        if(data.title) throw{status:400 , message:'Project is exist'};
         const project = await projectRepository.create(data);
         return project;
     },
@@ -13,8 +12,8 @@ export const projectServices = {
         return project;
     },
     async getAllProject(){
-        const projects = await projectRepository.getAllProject();
-        if(projects) throw {status:400 , message:'Project do not exist.'}
+        const projects = await projectRepository.getAllProjects();
+        if(!projects) throw {status:400 , message:'Project do not exist.'}
         return projects;
     },
     async updateProjectById(id:string ,data:Partial<ProjectDTO>){

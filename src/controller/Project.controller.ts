@@ -5,7 +5,7 @@ export const projectController = {
     async create(req:Request , res:Response){
         try{
             const data = req.body;
-            const img = req.file?.path;
+            const img = req.file?.filename;
             if(!img){
                 return res.status(400).json({
                     status:'Unsuccessful',
@@ -14,7 +14,7 @@ export const projectController = {
             }
             const project = await projectServices.createProject({
                 ...data,
-                image:img
+                image:`http://localhost:3000/uploads/${img}`
             });
 
             res.status(201).json({
@@ -80,7 +80,7 @@ export const projectController = {
             })
         }
     },
-    async getAllProjects(req:Request , res:Response){
+    async getAllProjects(_req:Request , res:Response){
         try{
             const projects = await projectServices.getAllProject();
             res.status(200).json({
