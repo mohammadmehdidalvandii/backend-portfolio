@@ -8,7 +8,7 @@ export const projectRepository = {
     async findById(id:string){
         return ProjectModel.findById(id);
     },
-    async update(id:string , data:ProjectDTO){
+    async update(id:string , data:Partial<ProjectDTO>){
         return ProjectModel.findOneAndUpdate({_id:id} , data , {new:true})
     },
     async delete(id:string){
