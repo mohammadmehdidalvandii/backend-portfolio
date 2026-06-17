@@ -8,6 +8,7 @@ import cors from 'cors'
 import { connectToDB } from './config/db';
 import notFoundMiddleware from './middleware/notFound.middleware';
 import UserRouter from './routes/User.router';
+import ProjectRouter from './routes/Project.router';
 import path from 'path';
 
 const app = express();
@@ -30,7 +31,7 @@ connectToDB();
 
 // Routes
 app.use('/api/user' , UserRouter);
-
+app.use('/api/projects', ProjectRouter)
 
 // Not found route
 app.use(notFoundMiddleware)
