@@ -9,6 +9,7 @@ import { connectToDB } from './config/db';
 import notFoundMiddleware from './middleware/notFound.middleware';
 import UserRouter from './routes/User.router';
 import ProjectRouter from './routes/Project.router';
+import CertificateRouter from './routes/Certificate.router';
 import path from 'path';
 
 const app = express();
@@ -31,7 +32,8 @@ connectToDB();
 
 // Routes
 app.use('/api/user' , UserRouter);
-app.use('/api/projects', ProjectRouter)
+app.use('/api/projects', ProjectRouter);
+app.use('/api/certificate', CertificateRouter);
 
 // Not found route
 app.use(notFoundMiddleware)
