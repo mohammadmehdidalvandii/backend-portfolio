@@ -34,7 +34,7 @@ export const projectController = {
              const id = String(req.params.id)
             const updateData ={
                 ...req.body,
-                ...(req.file && {image:req.file.path})
+                ...(req?.file && {image:req?.file?.path})
             }
             const project = await projectServices.updateProjectById(id, updateData)
             res.status(200).json({
