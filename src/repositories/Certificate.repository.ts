@@ -17,7 +17,7 @@ export const certificateRepository = {
         const certificate = await CertificateModel.findById(id);
         return certificate;
     },
-    async getAllCertificates(){
+    async getAll(){
         const certificates = await CertificateModel.find({}).sort({createdAt:-1}).lean();
         return certificates;
     }
