@@ -39,7 +39,7 @@ export const certificateController = {
 
             const certificate = await certificateServices.updateCertificateById(id , updateData);
             res.status(200).json({
-                status:'Unsuccessful',
+                status:'Successful',
                 message:'Certificate updated successfully ✅',
                 data:certificate
             })
