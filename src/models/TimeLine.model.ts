@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export const TimeLineSchema = new mongoose.Schema({
+ const TimeLineSchema = new mongoose.Schema({
     year:{
         type:Number,
         required:[true ,'Year is required'],
