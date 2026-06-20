@@ -38,7 +38,7 @@ export const projectController = {
             }
             const project = await projectServices.updateProjectById(id, updateData)
             res.status(200).json({
-                status:'Unsuccessful',
+                status:'Successful',
                 message:'Project updated successfully ✅',
                 data:project
             })
