@@ -6,7 +6,7 @@ export const messageRepository = {
         const message = await MessageModel.create(data);
         return message
     },
-    async update(id:string){
+    async update(id:string ){
         const message = await MessageModel.findOneAndUpdate({_id:id} , {isRead:true} ,{new:true});
         return message
     },
