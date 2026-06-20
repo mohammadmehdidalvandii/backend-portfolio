@@ -13,12 +13,13 @@ export const messageServices = {
     },
     async getMessageAll(){
         const messages = await messageRepository.findAll();
+        if (messages.length === 0) throw { status: 404, message: 'No messages found' };
         return messages
     },
-    async updateMessageById(id:string){
+    async updateMessageById(id:string , data:Partial<MessageDTO>){
         const message = await messageRepository.findById(id);
         if(!message) throw {status:404 , message:'Message not found'};
-        return await messageRepository.update(id)
+        return await messageRepository.update(id , data)
     },
     async deleteMessageById(id:string){
          const message = await messageRepository.findById(id);
