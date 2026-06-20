@@ -11,6 +11,7 @@ import UserRouter from './routes/User.router';
 import ProjectRouter from './routes/Project.router';
 import CertificateRouter from './routes/Certificate.router';
 import TimelineRouter from './routes/TimeLine.router';
+import MessageRouter from './routes/Message.router';
 import path from 'path';
 
 const app = express();
@@ -36,6 +37,7 @@ app.use('/api/user' , UserRouter);
 app.use('/api/projects', ProjectRouter);
 app.use('/api/certificate', CertificateRouter);
 app.use('/api/timeline' , TimelineRouter);
+app.use('/api/message' , MessageRouter);
 
 // Not found route
 app.use(notFoundMiddleware)
