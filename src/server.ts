@@ -27,7 +27,7 @@ app.use(express.urlencoded({extended:true}))
 
 app.use(morgan('dev'));
 app.use(helmet());
-app.use(cors({credentials:true ,  origin:'http://localhost:3000'}));
+app.use(cors({credentials:true ,  origin:'http://localhost:5173'}));
 
 // Connection To Database
 connectToDB();
