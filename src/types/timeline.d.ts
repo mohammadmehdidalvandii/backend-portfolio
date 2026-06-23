@@ -1,5 +1,5 @@
 export type TimelineDTO ={
-year:number,
+year:string,
 role:string,
 company:string,
 detail:string,

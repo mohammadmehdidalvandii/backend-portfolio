@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
  const TimeLineSchema = new mongoose.Schema({
     year:{
-        type:Number,
+        type:String,
         required:[true ,'Year is required'],
         min:[2020, 'Year too old'],
     },
