@@ -7,7 +7,7 @@ const router  = express.Router();
 router.get('/' , messageController.getAll)
 router.get('/:id' , messageController.getById)
 
-router.post('/' , authMiddleware , messageController.create)
+router.post('/' , messageController.create)
 router.patch('/:id' , authMiddleware , messageController.update)
 router.delete('/:id' , authMiddleware , messageController.delete)
 
