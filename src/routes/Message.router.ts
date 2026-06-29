@@ -4,7 +4,7 @@ import authMiddleware from '../middleware/auth.middleware';
 
 const router  = express.Router();
 
-router.get('/' , messageController.getAll)
+router.get('/' , authMiddleware , messageController.getAll)
 router.get('/:id' , messageController.getById)
 
 router.post('/' , messageController.create)
