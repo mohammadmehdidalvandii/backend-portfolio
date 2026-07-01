@@ -14,7 +14,7 @@ export const certificateController = {
             };
             const certificate = await certificateServices.createCertificate({
                 ...data,
-                image:`http://localhost:3000/uploads/${img}`
+                image:`https://api.web-dalvandi.ir/uploads/${img}`
             });
 
             res.status(201).json({

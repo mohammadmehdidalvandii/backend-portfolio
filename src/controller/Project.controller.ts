@@ -14,7 +14,7 @@ export const projectController = {
             }
             const project = await projectServices.createProject({
                 ...data,
-                image:`http://localhost:3000/uploads/${img}`
+                image:`https://api.web-dalvandi.ir/uploads/${img}`
             });
 
             res.status(201).json({
