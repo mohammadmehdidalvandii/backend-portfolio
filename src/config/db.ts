@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const MONGO_URL = process.env.MONGO_URL as string
+// const MONGO_URL = process.env.MONGO_URL as string
+const MONGO_URL = 'mongodb+srv://protfolio-db:mohammad79@portfolio-db.n95p6dj.mongodb.net/?appName=portfolio-db'
 
 const connectToDB = async ()=>{
     try{
