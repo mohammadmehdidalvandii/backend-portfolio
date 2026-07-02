@@ -26,7 +26,7 @@ const ProjectSchema = new mongoose.Schema({
         match: [/^https?:\/\/.+/, 'Invalid URL format']
     },
     githubLink:{
-        type:String,
+        type:[String],
         required:[true , 'Github link is required'],
         match: [/^https?:\/\/.+/, 'Invalid URL format']
     },
