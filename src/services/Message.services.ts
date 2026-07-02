@@ -13,7 +13,7 @@ export const messageServices = {
     },
     async getMessageAll(){
         const messages = await messageRepository.findAll();
-        if (messages.length === 0) throw { status: 404, message: 'No messages found' };
+        if(!messages) throw {status:400 , message:'messages do not exist.'}
         return messages
     },
     async updateMessageById(id:string , data:Partial<MessageDTO>){

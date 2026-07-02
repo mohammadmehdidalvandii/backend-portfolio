@@ -14,7 +14,6 @@ export const certificateServices = {
     },
     async getAllCertificates(){
         const certificates =  await certificateRepository.getAll();
-        if(certificates.length === 0) throw {status:404 , message:'No certificates found'};
         return certificates
     },
     async updateCertificateById(id:string , data:Partial<CertificateDTO>){

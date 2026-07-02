@@ -13,7 +13,7 @@ export const timelineServices = {
     },
     async getTimelineAll(){
         const timelines = await timeLineRepository.findAll();
-        if(timelines.length === 0) throw {status:404 , message:'No timelines found'}
+        if(!timelines) throw {status:400 , message:'timelines do not exist.'}
         return timelines;
     },
     async updateTimelineById(id:string , data:Partial<TimelineDTO>){
