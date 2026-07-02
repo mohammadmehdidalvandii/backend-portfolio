@@ -30,8 +30,7 @@ app.use(helmet());
 app.use(cors({credentials:true ,  origin:[
     "http://localhost:5173",
     "https://web-dalvandi.ir",
-    "https://www.web-dalvandi.ir",
-    "https://api.web-dalvandi.ir"
+    "https://www.web-dalvandi.ir"
 ]}));
 
 // Connection To Database
