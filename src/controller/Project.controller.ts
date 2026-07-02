@@ -34,7 +34,9 @@ export const projectController = {
              const id = String(req.params.id)
             const updateData ={
                 ...req.body,
-                ...(req?.file && {image:req?.file?.path})
+                ...(req?.file &&
+                    {image:`https://api.web-dalvandi.ir/uploads/${req.file?.filename}`}
+                )
             }
             const project = await projectServices.updateProjectById(id, updateData)
             res.status(200).json({
