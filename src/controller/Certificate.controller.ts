@@ -14,7 +14,7 @@ export const certificateController = {
             };
             const certificate = await certificateServices.createCertificate({
                 ...data,
-                image:`https://api.web-dalvandi.ir/uploads/${img}`
+                image:`https://protfolio-back.chbkn.dev/uploads/${img}`
             });
 
             res.status(201).json({
@@ -34,7 +34,7 @@ export const certificateController = {
             const id = String(req.params.id);
             const updateData = {
                 ...req.body,
-                ...(req?.file && {image:`https://protfolio-back.chbkn.run/uploads/${req.file?.filename}`})
+                ...(req?.file && {image:`https://protfolio-back.chbkn.dev/uploads/${req.file?.filename}`})
             }
 
             const certificate = await certificateServices.updateCertificateById(id , updateData);

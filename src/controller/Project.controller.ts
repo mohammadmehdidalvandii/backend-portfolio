@@ -14,7 +14,7 @@ export const projectController = {
             }
             const project = await projectServices.createProject({
                 ...data,
-                image:`https://protfolio-back.chbkn.run/uploads/${img}`
+                image:`https://protfolio-back.chbkn.dev/uploads/${img}`
             });
 
             res.status(201).json({
@@ -35,7 +35,7 @@ export const projectController = {
             const updateData ={
                 ...req.body,
                 ...(req?.file &&
-                    {image:`https://protfolio-back.chbkn.run/uploads/${req.file?.filename}`}
+                    {image:`https://protfolio-back.chbkn.dev/uploads/${req.file?.filename}`}
                 )
             }
             const project = await projectServices.updateProjectById(id, updateData)
