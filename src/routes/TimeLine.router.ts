@@ -1,14 +1,15 @@
 import express from 'express'
 import { timelineController } from '../controller/TimeLine.controller';
 import authMiddleware from '../middleware/auth.middleware';
+import { noCache, setCacheHeaders } from '../middleware/cacheControl.midleware';
 
 const router = express.Router();
 
-router.get('/' , timelineController.getAllTimelines);
-router.get('/:id' , timelineController.getById);
+router.get('/' ,setCacheHeaders(1800) , timelineController.getAllTimelines);
+router.get('/:id' ,setCacheHeaders(3600) , timelineController.getById);
 
-router.post('/' , authMiddleware , timelineController.create)
-router.patch('/:id' , authMiddleware , timelineController.update)
-router.delete('/:id' ,authMiddleware ,  timelineController.delete)
+router.post('/' , noCache ,  authMiddleware , timelineController.create)
+router.patch('/:id' , noCache ,  authMiddleware , timelineController.update)
+router.delete('/:id' , noCache , authMiddleware ,  timelineController.delete)
 
 export default router;

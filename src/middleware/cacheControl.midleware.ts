@@ -11,7 +11,7 @@ export const setCacheHeaders =(
     }
 }
 
-export const noCache = (_req:Response , res:Response , next:NextFunction)=>{
+export const noCache = (_req:Request , res:Response , next:NextFunction)=>{
     res.set('Cache-Control','no-cache , no-store ,  must-revalidate');
     next()
 }
