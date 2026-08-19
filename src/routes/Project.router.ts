@@ -2,7 +2,7 @@ import express from 'express';
 import { projectController } from '../controller/Project.controller';
 import upload from '../config/multer';
 import authMiddleware from '../middleware/auth.middleware';
-import { noCache, setCacheHeaders } from '../middleware/cacheControl.midleware';
+import { noCache, setCacheHeaders } from '../middleware/cacheControl.middleware';
 
 const router = express.Router()
 
