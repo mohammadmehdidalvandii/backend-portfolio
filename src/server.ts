@@ -29,6 +29,7 @@ app.use(morgan('dev'));
 app.use(helmet());
 app.use(cors({credentials:true ,  origin:[
     "http://localhost:5173",
+    "http://localhost:8080",
     "https://web-dalvandi.ir",
     "https://www.web-dalvandi.ir"
 ]}));
